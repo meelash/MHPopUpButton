@@ -61,4 +61,14 @@
     return _DOMSelectElement.options.length-1;
 }
 
+- (id)objectValue
+{
+    return _DOMSelectElement.options.selectedIndex;
+}
+
+- (void)setObjectValue:(id)aValue
+{
+    [self selectItemAtIndex:[aValue intValue]];
+}
+
 @end
