@@ -28,6 +28,8 @@
         _DOMSelectElement.style.width = _DOMElement.style.width;
         _DOMSelectElement.style.height = "24px"; //CPRectGetHeight([backgroundPopUp frame]) + "px";
         _DOMSelectElement.style.border = "0px solid #bdbdbd";
+        _DOMSelectElement.style.borderLeft = "5px solid transparent";
+        _DOMSelectElement.style.borderRight = "32px solid transparent";
         _DOMSelectElement.style.font = "normal normal normal 13px/normal Arial, Arial, sans-serif";
         _DOMSelectElement.style.textOverflow = "ellipsis";
         _DOMSelectElement.style.overflow = "hidden";
@@ -36,11 +38,6 @@
 //#endif
     }
     return self;
-}
-
-+ (BOOL)supportsDragAndDrop
-{
-    return YES;
 }
 
 - (void)removeAllItems
@@ -60,6 +57,7 @@
         DOMOption.innerHTML = titles[i];
         DOMOption.style.font = "normal normal normal 13px/normal Arial, Arial, sans-serif";
         DOMOption.style.textOverflow = "ellipsis";
+        DOMOption.style.backgroundColor = "F4F4F4";
         _DOMSelectElement.options.add(DOMOption);
     }
     
@@ -67,9 +65,6 @@
 
 - (void)selectItemAtIndex:(int)anIndex
 {
-    if (!_DOMSelectElement)
-        return;
-        
     if (_DOMSelectElement.options.selectedIndex == anIndex)
         return;
 
