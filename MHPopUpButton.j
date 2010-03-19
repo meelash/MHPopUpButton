@@ -21,6 +21,7 @@
         _DOMSelectElement.style.position = "absolute";
         _DOMSelectElement.style.left = "0px";
         _DOMSelectElement.style.top = "0px";
+        _DOMSelectElement.onclick = function() {[self performClick:self];};
 
         _DOMElement.appendChild(_DOMSelectElement);
         
@@ -69,7 +70,7 @@
         return;
 
     _DOMSelectElement.options.selectedIndex=anIndex;
-    [self sendAction:[self action] to:[self target]];
+    [self performClick:self];
 }
 
 - (int)indexOfSelectedItem
