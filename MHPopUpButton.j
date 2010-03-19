@@ -45,7 +45,7 @@
     var numberOfItems=_DOMSelectElement.options.length;
     for (var i=0; i<numberOfItems; i++)
     {
-        _DOMSelectElement.options.remove(_DOMSelectElement.options[0]);
+        _DOMSelectElement.remove(_DOMSelectElement.options[0]);
     }
 }
 
