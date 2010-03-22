@@ -73,6 +73,13 @@
     [self performClick:self];
 }
 
+- (CPString)itemTitleAtIndex:(int)anIndex
+{
+    if (_DOMSelectElement.options.length>anIndex)
+        return _DOMSelectElement.options[anIndex].innerHTML;
+    return nil;
+}
+
 - (int)indexOfSelectedItem
 {
     return _DOMSelectElement.options.selectedIndex;
