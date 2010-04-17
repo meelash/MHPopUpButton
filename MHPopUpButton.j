@@ -21,7 +21,7 @@
         _DOMSelectElement.style.position = "absolute";
         _DOMSelectElement.style.left = "0px";
         _DOMSelectElement.style.top = "0px";
-        _DOMSelectElement.onclick = function() {[self performClick:self];};
+        _DOMSelectElement.onchange = function() {[self performClick:self];};
 
         _DOMElement.appendChild(_DOMSelectElement);
         
